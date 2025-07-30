@@ -1,0 +1,11 @@
+@if (products$ | async; as products) {
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    @for(product of products; track product) {
+      <div [routerLink]="['product-detail', product.id]" class="bg-white border border-gray-200 rounded-xl shadow hover:shadow-xl transition-shadow p-6 flex flex-col items-center">
+        <img [src]="product.image" [width]="180" alt="{{product.title}}" class="mb-5 rounded-lg object-cover h-44 w-44 border border-gray-100 shadow-sm" />
+        <h3 class="text-lg font-semibold mb-2 text-gray-800 text-center line-clamp-2">{{product.title}}</h3>
+        <span class="text-green-600 font-bold text-2xl mb-2">${{product.price}}</span>
+      </div>
+    }
+  </div>
+}

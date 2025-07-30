@@ -1,0 +1,19 @@
+<div class="min-h-screen bg-gray-50 font-sans">
+  <div class="max-w-6xl mx-auto py-10">
+    <h2 [routerLink]="''" class="text-3xl font-extrabold text-gray-900 mb-8 text-center tracking-tight">The Kendo Store</h2>
+    <nav class="flex justify-center gap-6 mb-8">
+      <a
+        routerLink="/"
+        routerLinkActive="text-blue-600 border-b-2 border-blue-600"
+        class="text-gray-700 hover:text-blue-600 font-medium px-2 py-1 transition-colors"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >Products</a>
+      <a
+        routerLink="/about"
+        routerLinkActive="text-blue-600 border-b-2 border-blue-600"
+        class="text-gray-700 hover:text-blue-600 font-medium px-2 py-1 transition-colors"
+      >About</a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>
