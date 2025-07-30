@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { environment} from "../../environments/environment";
+import {EnvironmentConfigService} from "./environment-config.service";
 
 export type Product = {
   id: string;
@@ -15,8 +16,9 @@ export type Product = {
 })
 export class ProductsService {
 
-
   private http = inject(HttpClient)
-  public products$ = this.http.get<Product[]>(environment.api);
-  public productById = (id: string) => this.http.get<Product>(`${environment.api}/${id}`);
+  private runtimeConfig = inject(EnvironmentConfigService)
+  private apiUrl = this.runtimeConfig.get('API_URL');
+  public products$ = this.http.get<Product[]>(this.apiUrl);
+  public productById = (id: string) => this.http.get<Product>(`${this.apiUrl}/${id}`);
 }
