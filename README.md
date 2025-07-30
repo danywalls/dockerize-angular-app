@@ -1,5 +1,5 @@
-# Build Fast Fast Apps with Angular with SSG
+# Dockerize Angular App
 
-This source code is related to Use Pre-Rendering in Angular for Better SEO and Performance blog post.
+This source code is related to Dockerize Angular Apps.
 
 https://www.telerik.com/blogs/author/dany-paredes
